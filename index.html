@@ -10,9 +10,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet-src.js"></script>
 
-    <script src="js/pecker.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- leaflet plugins-->
+    <!-- leaflet control window-->
+    <script src="https://rawgit.com/mapshakers/leaflet-control-window/master/src/L.Control.Window.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/mapshakers/leaflet-control-window/master/src/L.Control.Window.css" />
+
+    <!-- leaflet control bar -->
+    <script src="https://rawgit.com/filipzava/leaflet-control-bar/master/src/L.Control.Bar.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/filipzava/leaflet-control-bar/master/src/L.Control.Bar.css" />
+
+
+    <!-- src-->
+    <script src="js/pckr.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/errors.js"></script>
+    <script src="js/corrections.js"></script>
 </head>
 <body>
-    <script src="js/app.js"></script>
+<div id="bar">
+    <span class="title">Pecker</span>
+    <button id="loginBtn">login</button> </div>
+<div id="map"></div>
+
+<div id="login" style="display: none">
+    <form>
+        <form>
+            <label>Username:</label>  <br> <input type="text" name="fname"><br>
+            <label>password: </label> <br> <input type="text" name="lname"><br>
+        </form>
+    </form>
+</div>
+
+
+<script src="js/app.js"></script>
 </body>
 </html>
