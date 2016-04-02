@@ -8,7 +8,7 @@ pckr.Map = function(querySelector,options) {
 };
 
 // leaflet map
-pckr.Map.prototype._map;
+pckr.Map._map;
 
 pckr.Map.prototype.getMap = function(){
     return pckr.Map._map

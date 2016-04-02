@@ -5,7 +5,8 @@ var map =  pMap.getMap();
 
 var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
 
-var win =  L.control.window(map,{title:'Twitter login',content:$('#login').show().html()})
+
+var win =  L.control.window(map,{title:'Twitter login',content:'ahoj'})
     .prompt({callback:function(){alert('This is called after OK click!')}});
 
 $('#loginBtn').on('click',function () {
@@ -25,3 +26,7 @@ var sidebar = L.control.sidebar('sidebar', {
     position: 'right'
 });
 map.addControl(sidebar);
+
+var twitter = L.easyButton( 'fa fa-twitter', function(){
+    alert('twitter login');
+}).addTo(map);
