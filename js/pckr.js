@@ -4,25 +4,45 @@ var pckr = {
 
 // MAP object
 pckr.Map = function(querySelector,options) {
-
-    this._map = new L.Map(querySelector, options);
-
+    pckr.Map._map = new L.Map(querySelector, options);
 };
 
 // leaflet map
 pckr.Map.prototype._map;
 
 pckr.Map.prototype.getMap = function(){
-    return this._map;
+    return pckr.Map._map
 };
 
 // configuration
-pckr.Config = function(conf) {
+pckr.setConfig = function(conf) {
 
-    this_._server = conf['server'];
-
+    this.config = conf;
 };
 
 // api baseurl
-pckr.Config.prototype._server = null;
+pckr.config = {
+    server : "http://pecker4.azurewebsites.net/"
+};
 
+// XHR
+pckr.Xhr = function() {
+
+};
+
+// XHR
+pckr.Xhr.doPost = function(route,requestData) {
+    return $.ajax({
+        type: "POST",
+        url: pckr.config['server']+'/'+route,
+        data: requestData
+    });
+};
+
+pckr.Xhr.doGet = function(route,requestData){
+    return $.ajax({
+        type: "GET",
+        url: pckr.config['server']+'/'+route,
+        data: requestData
+    });
+};
